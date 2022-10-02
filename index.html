@@ -32,16 +32,18 @@
        background: #ff9ed2;
         color: #fff;
     }
+
+    img{
+        height: 160px;
+        margin-right: 15px;
+    }
 </style>
 <body>
     <h1>Hello Vue :)</h1>
     <div id="app">
-        <!-- attribute binding -->
-<!--        <a :href="url">best website ever</a>-->
-
         <div v-if="showBooks">
             <ul>
-                <li v-for="book in books" :class="{ fav: book.isFav }">
+                <li v-for="book in books" :class="{ fav: book.isFav }" @click="toogleClassFav(book)">
                     <img :src="book.img" :alt="book.title" />
                     <h3>{{ book.title }}</h3>
                     <p>{{ book.author }}</p>
